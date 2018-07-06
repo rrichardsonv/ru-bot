@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  pool: 10
+  timeout: 5000
+  encoding: unicode
+
+development:
+  <<: *default
+  database: ru_bot_development
+
+test:
+  <<: *default
+  database: ru_bot_test
+
+production:
+  <<: *default
+  database: ru_bot_production

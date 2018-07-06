@@ -1,0 +1,89 @@
+# This is the configuration used to check the rubocop source code.
+
+require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.4
+
+  Exclude:
+    - 'config.ru'
+    - 'bin/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'log/*'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+    - 'spec/support/*'
+    - 'tmp/*'
+    - 'vendor/**/*'
+    - 'Gemfile'
+    - 'Rakefile'
+
+Documentation:
+  Enabled: false
+
+Style/Encoding:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedStyle: hash_rockets
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/ClassLength:
+  Max: 250
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - 'context'
+    - 'aasm'
+    - 'describe'
+    - 'factory'
+    - 'it'
+    - 'namespace'
+    - 'expect'
+    - 'let'
+    - 'define'
+
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+
+RSpec/ExampleLength:
+  Max: 30
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 90
+
+RSpec/MultipleExpectations:
+  Enabled: false
+  Max: 1
+
+RSpec/MessageExpectation:
+  Enabled: false
+  EnforcedStyle: allow
+
+RSpec/EmptyExampleGroup:
+  Enabled: false
+  CustomIncludeMethods: []
+
+Style/TrailingCommaInLiteral:
+  Enabled: false
+
+Style/SpaceAroundOperators:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+# broken in 0.48.1 for stabby lambda in scopes
+# http://stackoverflow.com/questions/43229096/parenthesize-the-param-to-make-sure-that-block-will-be-associated-with-method-ca
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
