@@ -1,6 +1,9 @@
 require 'ostruct'
 require 'pathname'
-require 'dotenv/load'
+require 'dotenv'
+
+# Load environment variables
+Dotenv.load
 
 # Load environment settings
 Config = OpenStruct.new

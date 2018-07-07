@@ -1,4 +1,4 @@
-require_relative './environment'
+require_relative 'environment'
 
 # Connect to database
 OTR::ActiveRecord.configure_from_file! Config.root.join('config', 'postgresql.yml')
@@ -14,6 +14,6 @@ OTR::ActiveRecord.configure_from_file! Config.root.join('config', 'postgresql.ym
 end
 
 
-ActiveRecord::Base.establish_connection(
-  YAML.load_file('config/postgresql.yml')[ENV['RACK_ENV']]
-)
+# ActiveRecord::Base.establish_connection(
+#   YAML.load_file('config/postgresql.yml')[ENV['RACK_ENV']]
+# )

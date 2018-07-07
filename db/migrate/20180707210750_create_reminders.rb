@@ -1,6 +1,6 @@
 class CreateReminders < ActiveRecord::Migration[5.2]
   def change
-    create_table :reminders do id: :uuid, default: "gen_random_uuid()", force: true do |t|
+    create_table :reminders, id: :uuid, default: "uuid_generate_v4()", force: true do |t|
       t.string :reminder_message
       t.string :slack_channel_id, null: false
       t.string :slack_message_ts, null: false
