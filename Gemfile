@@ -5,6 +5,7 @@ gem 'activerecord', require: 'active_record'
 gem 'otr-activerecord'
 gem 'pg'
 gem 'slack-ruby-bot-server'
+gem 'dotenv'
 
 group :development, :test do
   gem 'standalone_migrations'
