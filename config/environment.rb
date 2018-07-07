@@ -1,5 +1,6 @@
 require 'ostruct'
 require 'pathname'
+require 'dotenv/load'
 
 # Load environment settings
 Config = OpenStruct.new
